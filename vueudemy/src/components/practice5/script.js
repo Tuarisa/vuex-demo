@@ -23,7 +23,6 @@ export default class App extends Vue {
 
     }
     isArray(a){
-        console.log(typeof a)
         return typeof a === 'object'
     }
 }
