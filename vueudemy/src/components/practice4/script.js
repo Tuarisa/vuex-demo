@@ -16,7 +16,7 @@ export default class App extends Vue {
     checkClassOne=false
     checkClassTwo=false
 
-    attachValue='borderClass'
+    mystyle={backgroundColor:'red'}
 
     progressWidth=1
 
@@ -36,9 +36,6 @@ export default class App extends Vue {
         }, 100);
     }
 
-    get attachValueComputed() {
-        return this[this.attachValue]
-    }
 
 
 
