@@ -4,6 +4,7 @@ import Hello from '@/components/Hello/vue'
 import PracticeOne from '@/components/practice1/vue'
 import PracticeTwo from '@/components/practice2/vue'
 import PracticeThree from '@/components/practice3/vue'
+import Practice4 from '@/components/practice4/vue'
 import example from '@/components/example'
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
       path: '/practice3',
       name: 'practice3',
       component: PracticeThree
+    },
+    {
+      path: '/practice4',
+      name: 'practice4',
+      component: Practice4
     },
     {
       path: '/example',

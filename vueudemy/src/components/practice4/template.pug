@@ -1,0 +1,25 @@
+#exercise
+	// 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below)
+	div
+		button(@click='startEffect') Start Effect
+		#effect(:class="toggleClasses[currentClassId]")
+	// 2) Create a couple of CSS classes and attach them via the array syntax
+	div(:class="[squareClass, borderClass, coloredClass]") I got no class :(
+	// 3) Let the user enter a class (create some example classes) and attach it
+	div
+		input(type='text' v-model="attachClass")
+		div(:class="['square',attachClass]")
+	// 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes
+	div
+		input(type='checkbox' v-model="checkClassOne")
+		input(type='checkbox' v-model="checkClassTwo")
+		div(:class="['square',{'border':checkClassOne,'colored':checkClassTwo}]")
+	// 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.
+	div
+		input(type='text' v-model="attachValue")
+		div(:class="['square',attachValueComputed]")
+	// 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button.
+	div
+		button(v-on:click='startProgress') Start Progress
+		div(class="progress-bar")
+			.bar(:style="{width:progressWidth+'%'}")
