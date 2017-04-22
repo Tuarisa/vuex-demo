@@ -1,0 +1,29 @@
+#challenge
+	section.row
+		.small-6.columns
+			h1.text-center YOU
+			.healthbar
+				.healthbar.text-center(style='background-color: green; margin: 0; color: white;', :style="{width:health.me+'%'}")
+					| {{health.me}}
+		.small-6.columns
+			h1.text-center MONSTER
+			.healthbar
+				.healthbar.text-center(style='background-color: green; margin: 0; color: white;', :style="{width:health.enemy+'%'}")
+					| {{health.enemy}}
+	section.row.controls(v-if="!isGameStarted")
+		.small-12.columns
+			button#start-game(@click="startGame") START NEW GAME
+	section.row.controls(v-else)
+		.small-12.columns
+			button#attack(@click="attack") ATTACK
+			button#special-attack(@click="specialAttack") SPECIAL ATTACK
+			button#heal(@click="heal") HEAL
+			button#give-up(@click="giveUp") GIVE UP
+	section.row.log(v-if="isGameStarted && turns.length>0")
+		.small-12.columns
+			ul
+				template(v-for="turn in turns")
+					li.player-turn(v-if="turn.me>0") Player heals himself for {{turn.me}}
+					li.player-turn(v-else) Player hits monster for {{-1*turn.me}}
+					li.monster-turn Monster hits player for {{-1*turn.enemy}}
+

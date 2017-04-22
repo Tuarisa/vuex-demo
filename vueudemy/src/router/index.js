@@ -6,6 +6,7 @@ import PracticeTwo from '@/components/practice2/vue'
 import PracticeThree from '@/components/practice3/vue'
 import Practice4 from '@/components/practice4/vue'
 import Practice5 from '@/components/practice5/vue'
+import Challenge1 from '@/components/challenge1/vue'
 import example from '@/components/example'
 
 Vue.use(Router)
@@ -41,6 +42,11 @@ export default new Router({
       path: '/practice5',
       name: 'practice5',
       component: Practice5
+    },
+    {
+      path: '/challenge1',
+      name: 'challenge1',
+      component: Challenge1
     },
     {
       path: '/example',
